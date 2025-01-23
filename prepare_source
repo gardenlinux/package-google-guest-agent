@@ -5,7 +5,3 @@ cd $dir/src
 pristine-lfs checkout -o .. --auto
 mv ../google-guest-agent_20211116.00.orig.tar.xz ../orig.tar.xz
 xz -d ../orig.tar.xz
-git add .
-git config --global user.email "builder@gardenlinux.com"
-git config --global user.name "Garden Linux Builder"
-git commit -m foo
