@@ -1,2 +1,5 @@
-apt_src google-guest-agent
-version_suffix=gl0
+apt-get update
+apt-get install wget -y
+wget https://snapshot.debian.org/archive/debian/20220506T153640Z/pool/main/g/google-guest-agent/google-guest-agent_20211116.00.orig.tar.xz -O - | xz -d --stdout | tee "$dir/orig.tar" | tar --extract --strip-components 1 --directory "$dir/src"
+mkdir "$dir/src/debian"
+wget https://snapshot.debian.org/archive/debian/20240808T210024Z/pool/main/g/google-guest-agent/google-guest-agent_20211116.00-6.2.debian.tar.xz -O - | xz -d --stdout | tar --extract --strip-components 1 --directory "$dir/src/debian" 
