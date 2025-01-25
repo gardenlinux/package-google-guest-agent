@@ -1,2 +1,37 @@
-apt_src google-guest-agent
+version_orig=20250122.00
 version_suffix=gl0
+
+# Clone upstream repository
+workdir="$(mktemp -d)"
+
+git clone --depth 1 --recurse-submodules --branch "${version_orig}" https://github.com/GoogleCloudPlatform/guest-agent.git "$workdir"
+
+pushd "$workdir"
+
+# Fix upstream Debian package definition
+mv ./packaging/debian ./
+
+latest_commit_message="$(git log -1 --pretty="format:%s" ./google_guest_agent)"
+latest_commit_datetime="$(git log -1 --pretty="format:%aD" ./google_guest_agent)"
+
+tee ./debian/changelog << EOF
+google-guest-agent (1:${version_orig}) stable; urgency=medium
+
+  * $latest_commit_message
+  * Detailed changelog an be found at https://github.com/GoogleCloudPlatform/guest-agent/commits/${version_orig}
+
+ -- $maintainer <$email>  $latest_commit_datetime
+EOF
+
+echo "3.0 (native)" > ./debian/source/format
+
+# Cleanup
+rm -rf ./.git
+rm -rf ./packaging
+
+popd
+
+# Import modified upstream source distribution
+import_src "$workdir"
+
+rm -rf "$workdir"
