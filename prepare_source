@@ -1,5 +1,5 @@
-version_orig=20250628.00
-version_suffix=gl1
+version_orig=20250703.00
+version_suffix=gl0
 
 # Clone upstream repository
 workdir="$(mktemp -d)"
@@ -8,12 +8,6 @@ git clone --depth 1 --recurse-submodules --branch "${version_orig}" https://gith
 
 pushd "$workdir"
 # Enable the service
-tee ./90-google-guest-agent.preset << EOF
-enable google-guest-agent.service
-enable google-shutdown-scripts.service
-enable google-startup-scripts.service
-enable gce-workload-cert-refresh.timer
-EOF
 
 # Fix upstream Debian package definition
 mv ./packaging/debian ./
