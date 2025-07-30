@@ -5,7 +5,7 @@ on:
     - cron: '0 0 * * *'
 jobs:
   build:
-    uses: gardenlinux/package-build/.github/workflows/build.yml@main
+    uses: gardenlinux/package-build/.github/workflows/build.yml@go-workaround
     with:
       release: ${{ github.ref == 'refs/heads/main' }}
       runs-on-arm64: ubuntu-24.04-arm
