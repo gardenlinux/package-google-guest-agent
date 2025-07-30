@@ -1,0 +1,1 @@
+apt-get uninstall purge golang-1.22*
