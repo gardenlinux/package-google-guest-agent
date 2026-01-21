@@ -1,5 +1,5 @@
 version_orig=20250703.00
-version_suffix=gl2~bp1877
+version_suffix=gl3~bp1877
 
 # Clone upstream repository
 workdir="$(mktemp -d)"
@@ -36,3 +36,5 @@ popd
 import_src "$workdir"
 
 rm -rf "$workdir"
+
+import_upstream_patches
