@@ -1,4 +1,5 @@
 version_orig=20250703.00
+version_suffix=gl1
 
 # Clone upstream repository
 workdir="$(mktemp -d)"
