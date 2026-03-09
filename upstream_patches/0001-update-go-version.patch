@@ -1,12 +1,12 @@
 diff --git a/go.mod b/go.mod
-index 0de5570..c4646a9 100644
+index 0de5570..9b7b40c 100644
 --- a/go.mod
 +++ b/go.mod
 @@ -1,6 +1,6 @@
  module github.com/GoogleCloudPlatform/guest-agent
  
 -go 1.23.0
-+go 1.24.9
++go 1.24.13
  
  replace github.com/GoogleCloudPlatform/guest-agent/metadata => ../metadata
  
