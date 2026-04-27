@@ -10,4 +10,4 @@ jobs:
       release: ${{ github.ref == 'refs/heads/main' }}
       runs-on-arm64: ubuntu-24.04-arm
       build_dep: |
-        gardenlinux/package-golang 1.26.1-1gl0
+        gardenlinux/package-golang 1.26.2-1gl0
