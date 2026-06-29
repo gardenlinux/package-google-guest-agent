@@ -1,10 +1,13 @@
-version_orig=20260522.00
-version_suffix=gl0~bp2150
-plugin_manager_commit=c98709762f0de7e6b9fda26ec4dbd9dd3c43237a
+version_orig=20260529.00
+version_suffix=gl0~bp1877
+plugin_manager_commit=d0a05637c421b7f942bffb061ffe0d7494d7c433
 
 plugin_manager_workdir="$(mktemp -d)"
 
-git clone --depth=1 --revision="$plugin_manager_commit" https://github.com/GoogleCloudPlatform/google-guest-agent.git "$plugin_manager_workdir"
+git init "$plugin_manager_workdir"
+git -C "$plugin_manager_workdir" remote add origin https://github.com/GoogleCloudPlatform/google-guest-agent.git
+git -C "$plugin_manager_workdir" fetch --depth=1 origin "$plugin_manager_commit"
+git -C "$plugin_manager_workdir" checkout FETCH_HEAD
 rm -rf "$plugin_manager_workdir/.git"
 
 # Clone upstream repository
