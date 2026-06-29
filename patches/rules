@@ -1,0 +1,11 @@
+diff --git a/debian/rules b/debian/rules
+--- a/debian/rules
++++ b/debian/rules
+@@ -1,6 +1,6 @@
+ #!/usr/bin/make -f
+
+-export PATH := /tmp/go/bin:/usr/share/gocode/bin:$(HOME)/.local/bin:$(PATH)
++export PATH := /usr/lib/go-1.26/bin:/tmp/go/bin:/usr/share/gocode/bin:$(HOME)/.local/bin:$(PATH)
+ export SHELL := env PATH=$(PATH) /bin/bash
+
+ export DH_OPTIONS
