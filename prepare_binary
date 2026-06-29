@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -eufo pipefail
+
+mkdir -p /usr/share/gocode
+chmod -R a+rwX /usr/share/gocode
