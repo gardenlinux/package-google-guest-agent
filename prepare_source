@@ -1,5 +1,5 @@
 version_orig=20260529.00
-version_suffix=gl2~bp1877
+version_suffix=gl3~bp1877
 plugin_manager_commit=d0a05637c421b7f942bffb061ffe0d7494d7c433
 
 plugin_manager_workdir="$(mktemp -d)"
