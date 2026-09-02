@@ -42,4 +42,6 @@ popd
 # Import modified upstream source distribution
 import_src "$workdir"
 
+add_sbom "$dir/src" "" "google-guest-agent" "$version_orig"
+
 rm -rf "$workdir"
